@@ -12,71 +12,79 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :jobname %><br>
+    <%= f.label :"職種" %><br>
     <%= f.text_field :jobname %>
   </div>
   <div class="field">
-    <%= f.label :salary %><br>
+    <%= f.label :"給料" %><br>
     <%= f.number_field :salary %>
   </div>
   <div class="field">
-    <%= f.label :dividend_income %><br>
+    <%= f.label :"利息" %><br>
+    <%= f.number_field :interest_income %>
+  </div>
+  <div class="field">
+    <%= f.label :"配当" %><br>
     <%= f.number_field :dividend_income %>
   </div>
   <div class="field">
-    <%= f.label :business_income %><br>
+    <%= f.label :"不動産/ビジネス" %><br>
     <%= f.number_field :business_income %>
   </div>
   <div class="field">
-    <%= f.label :tax %><br>
+    <%= f.label :"税金" %><br>
     <%= f.number_field :tax %>
   </div>
   <div class="field">
-    <%= f.label :home_payment %><br>
+    <%= f.label :"家賃の支払い" %><br>
     <%= f.number_field :home_payment %>
   </div>
   <div class="field">
-    <%= f.label :education_payment %><br>
+    <%= f.label :"教育ローンの支払い" %><br>
     <%= f.number_field :education_payment %>
   </div>
   <div class="field">
-    <%= f.label :car_payment %><br>
+    <%= f.label :"自動車ローンの支払" %><br>
     <%= f.number_field :car_payment %>
   </div>
   <div class="field">
-    <%= f.label :creditcard_payement %><br>
+    <%= f.label :"クレジットカードの支払" %><br>
     <%= f.number_field :creditcard_payement %>
   </div>
   <div class="field">
-    <%= f.label :retail_payment %><br>
+    <%= f.label :"小売店への支払い" %><br>
     <%= f.number_field :retail_payment %>
   </div>
   <div class="field">
-    <%= f.label :education_expense_per_child %><br>
+    <%= f.label :"その他の支出" %><br>
+    <%= f.number_field :etc_payment %>
+  </div>
+  <div class="field">
+    <%= f.label :"子供一人あたりの育児費" %><br>
     <%= f.number_field :education_expense_per_child %>
   </div>
   <div class="field">
-    <%= f.label :saving %><br>
+    <%= f.label :"貯蓄" %><br>
     <%= f.number_field :saving %>
   </div>
   <div class="field">
-    <%= f.label :home_roan %><br>
+    <%= f.label :"住宅ローン" %><br>
     <%= f.number_field :home_roan %>
   </div>
   <div class="field">
-    <%= f.label :payment_roan %><br>
-    <%= f.number_field :payment_roan %>
+    <%= f.label :"教育ローン" %><br>
+    <%= f.number_field :education_roan %>
   </div>
   <div class="field">
-    <%= f.label :car_roan %><br>
+    <%= f.label :"自動車ローン" %><br>
     <%= f.number_field :car_roan %>
   </div>
   <div class="field">
-    <%= f.label :creditcard_roan %><br>
+    <%= f.label :"クレジットカード" %><br>
     <%= f.number_field :creditcard_roan %>
   </div>
   <div class="field">
-    <%= f.label :retail_roan %><br>
+    <%= f.label :"小売店のつけ" %><br>
     <%= f.number_field :retail_roan %>
   </div>
   <div class="actions">

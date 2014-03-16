@@ -1,89 +1,180 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Jobname:</strong>
-  <%= @job.jobname %>
-</p>
 
-<p>
-  <strong>Salary:</strong>
-  <%= @job.salary %>
-</p>
+<table class="job">
+  <tr>
+    <th colspan="5" class="jobname"><%= @job.jobname %></th>
+  </tr>
+  <tr>
+    <th colspan="5">目標：不労所得が支出の合計を上回ること。</th>
+  </tr>
+  <tr>
+    <td colspan="5">　</td>
+  </tr>
+  <tr>
+    <th colspan="2" class="title_g">収入</th>
+    <td class="table_center">　</td>
+    <td colspan="2"></td>
+  </tr>
+  <tr>
+    <td class="item highlight">給料：</td>
+    <td class="money highlight"><%= number_to_currency(@job.salary, :precision => 0) %></td>
+    <td></td>
+    <td class="item"></td>
+    <td class="money"></td>
+  </tr>
+  <tr>
+    <td class="item highlight">利息：</td>
+    <td class="money highlight"><%= number_to_currency(@job.interest_income, :precision => 0) %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="item highlight">配当：</td>
+    <td class="money highlight"><%= number_to_currency(@job.dividend_income, :precision => 0) %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="item highlight">不動産／ビジネス：</td>
+    <td class="money highlight"><%= number_to_currency(@job.business_income, :precision => 0) %></td>
+    <td>　</td>
+    <td class="item highlight">不労所得：</td>
+    <td class="money highlight"><%= number_to_currency(@job.interest_income + @job.dividend_income + @job.business_income, :precision => 0) %></td>
+  </tr>
+  <tr>
+    <td colspan="2">(利息＋配当＋不動産/ビジネス＝不労所得の総額)</td>
+    <td>　</td>
+    <td class="point highlight">所得の合計：</td>
+    <% @income =  @job.salary + @job.interest_income + @job.dividend_income + @job.business_income  %>
+    <td class="money point highlight"><%= number_to_currency(@income, :precision => 0) %></td>
+  </tr>
 
-<p>
-  <strong>Dividend income:</strong>
-  <%= @job.dividend_income %>
-</p>
 
-<p>
-  <strong>Business income:</strong>
-  <%= @job.business_income %>
-</p>
+  <tr>
+    <td colspan="5"></td>
+  </tr>
 
-<p>
-  <strong>Tax:</strong>
-  <%= @job.tax %>
-</p>
+  <tr>
+    <th colspan="2" class="title_b">支出</th>
+    <td></td>
+    <td colspan="2"></td>
+  </tr>
+  <tr>
+    <td class="item highlight">税金：</td>
+    <td class="money highlight"><%= number_to_currency(@job.tax, :precision => 0) %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="item highlight">ローン/家賃の支払い：</td>
+    <td class="money highlight"><%= number_to_currency(@job.home_payment, :precision => 0) %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="item highlight">教育ローンの支払い：</td>
+    <td class="money highlight"><%= number_to_currency(@job.education_payment, :precision => 0) %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="item highlight">自動車ローンの支払：</td>
+    <td class="money highlight"><%= number_to_currency(@job.car_payment, :precision => 0) %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="item highlight">クレジットカードの支払：</td>
+    <td class="money highlight"><%= number_to_currency(@job.creditcard_payement, :precision => 0) %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="item highlight">小売店への支払い：</td>
+    <td class="money highlight"><%= number_to_currency(@job.retail_payment, :precision => 0) %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="item highlight">その他の支出：</td>
+    <td class="money highlight"><%= number_to_currency(@job.etc_payment, :precision => 0) %></td>
+    <td></td>
+    <td class="item highlight">子供一人あたりの育児費：</td>
+    <td class="money highlight"><%= number_to_currency(@job.education_expense_per_child, :precision => 0) %></td>
+  </tr>
+  <tr>
+    <td class="item highlight">育児費：</td>
+    <% @education_expense = @job.education_expense_per_child * 0 %>
+    <td class="money highlight"><%= number_to_currency(@education_expense, :precision => 0)  %></td>
+    <td></td>
+    <td class="point highlight">支出の合計：</td>
+    <% @payment = @job.tax + @job.home_payment + @job.education_payment + @job.car_payment + @job.creditcard_payement + @job.retail_payment + @job.etc_payment + @education_expense %>
+    <td class="money point highlight"><%= number_to_currency(@payment, :precision => 0) %></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="item highlight cashflow">毎月のキャッシュフロー</td>
+    <td class="money highlight cashflow"><%= number_to_currency(@income - @payment, :precision => 0) %> </td>
+  </tr>
 
-<p>
-  <strong>Home payment:</strong>
-  <%= @job.home_payment %>
-</p>
+  <tr>
+    <td colspan="5">　</td>
+  </tr>
 
-<p>
-  <strong>Education payment:</strong>
-  <%= @job.education_payment %>
-</p>
+  <tr>
+    <th colspan="2" class="title_g">資産</th>
+    <td></td>
+    <th colspan="2" class="title_b">負債</th>
+  </tr>
+  <tr>
+    <td class="item highlight">貯蓄：</td>
+    <td class="money highlight"><%= number_to_currency(@job.saving, :precision => 0) %></td>
+    <td></td>
+    <td class="item highlight">住宅ローン：</td>
+    <td class="money highlight"><%= number_to_currency(@job.home_roan, :precision => 0) %></td>  
+  </tr> 
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="item highlight">教育ローン</td>
+    <td class="money highlight"><%= number_to_currency(@job.education_roan, :precision => 0) %></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="item highlight">自動車ローン</td>
+    <td class="money highlight"><%= number_to_currency(@job.car_roan, :precision => 0) %></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="item highlight">クレジットカード</td>
+    <td class="money highlight"><%= number_to_currency(@job.creditcard_roan, :precision => 0) %></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="item highlight">小売店のつけ</td>
+    <td class="money highlight"><%= number_to_currency(@job.retail_roan, :precision => 0) %></td>
+  </tr>
 
-<p>
-  <strong>Car payment:</strong>
-  <%= @job.car_payment %>
-</p>
+</table>
 
-<p>
-  <strong>Creditcard payement:</strong>
-  <%= @job.creditcard_payement %>
-</p>
 
-<p>
-  <strong>Retail payment:</strong>
-  <%= @job.retail_payment %>
-</p>
-
-<p>
-  <strong>Education expense per child:</strong>
-  <%= @job.education_expense_per_child %>
-</p>
-
-<p>
-  <strong>Saving:</strong>
-  <%= @job.saving %>
-</p>
-
-<p>
-  <strong>Home roan:</strong>
-  <%= @job.home_roan %>
-</p>
-
-<p>
-  <strong>Payment roan:</strong>
-  <%= @job.payment_roan %>
-</p>
-
-<p>
-  <strong>Car roan:</strong>
-  <%= @job.car_roan %>
-</p>
-
-<p>
-  <strong>Creditcard roan:</strong>
-  <%= @job.creditcard_roan %>
-</p>
-
-<p>
-  <strong>Retail roan:</strong>
-  <%= @job.retail_roan %>
-</p>
-
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+<%= link_to '編集', edit_job_path(@job) %> |
+<%= link_to '戻る ', jobs_path %>
