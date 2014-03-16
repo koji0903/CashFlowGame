@@ -1,0 +1,85 @@
+<%= form_for(@job) do |f| %>
+  <% if @job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% @job.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :jobname %><br>
+    <%= f.text_field :jobname %>
+  </div>
+  <div class="field">
+    <%= f.label :salary %><br>
+    <%= f.number_field :salary %>
+  </div>
+  <div class="field">
+    <%= f.label :dividend_income %><br>
+    <%= f.number_field :dividend_income %>
+  </div>
+  <div class="field">
+    <%= f.label :business_income %><br>
+    <%= f.number_field :business_income %>
+  </div>
+  <div class="field">
+    <%= f.label :tax %><br>
+    <%= f.number_field :tax %>
+  </div>
+  <div class="field">
+    <%= f.label :home_payment %><br>
+    <%= f.number_field :home_payment %>
+  </div>
+  <div class="field">
+    <%= f.label :education_payment %><br>
+    <%= f.number_field :education_payment %>
+  </div>
+  <div class="field">
+    <%= f.label :car_payment %><br>
+    <%= f.number_field :car_payment %>
+  </div>
+  <div class="field">
+    <%= f.label :creditcard_payement %><br>
+    <%= f.number_field :creditcard_payement %>
+  </div>
+  <div class="field">
+    <%= f.label :retail_payment %><br>
+    <%= f.number_field :retail_payment %>
+  </div>
+  <div class="field">
+    <%= f.label :education_expense_per_child %><br>
+    <%= f.number_field :education_expense_per_child %>
+  </div>
+  <div class="field">
+    <%= f.label :saving %><br>
+    <%= f.number_field :saving %>
+  </div>
+  <div class="field">
+    <%= f.label :home_roan %><br>
+    <%= f.number_field :home_roan %>
+  </div>
+  <div class="field">
+    <%= f.label :payment_roan %><br>
+    <%= f.number_field :payment_roan %>
+  </div>
+  <div class="field">
+    <%= f.label :car_roan %><br>
+    <%= f.number_field :car_roan %>
+  </div>
+  <div class="field">
+    <%= f.label :creditcard_roan %><br>
+    <%= f.number_field :creditcard_roan %>
+  </div>
+  <div class="field">
+    <%= f.label :retail_roan %><br>
+    <%= f.number_field :retail_roan %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

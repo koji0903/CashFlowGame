@@ -1,0 +1,59 @@
+<h1>Listing jobs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Jobname</th>
+      <th>Salary</th>
+      <th>Dividend income</th>
+      <th>Business income</th>
+      <th>Tax</th>
+      <th>Home payment</th>
+      <th>Education payment</th>
+      <th>Car payment</th>
+      <th>Creditcard payement</th>
+      <th>Retail payment</th>
+      <th>Education expense per child</th>
+      <th>Saving</th>
+      <th>Home roan</th>
+      <th>Payment roan</th>
+      <th>Car roan</th>
+      <th>Creditcard roan</th>
+      <th>Retail roan</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jobs.each do |job| %>
+      <tr>
+        <td><%= job.jobname %></td>
+        <td><%= job.salary %></td>
+        <td><%= job.dividend_income %></td>
+        <td><%= job.business_income %></td>
+        <td><%= job.tax %></td>
+        <td><%= job.home_payment %></td>
+        <td><%= job.education_payment %></td>
+        <td><%= job.car_payment %></td>
+        <td><%= job.creditcard_payement %></td>
+        <td><%= job.retail_payment %></td>
+        <td><%= job.education_expense_per_child %></td>
+        <td><%= job.saving %></td>
+        <td><%= job.home_roan %></td>
+        <td><%= job.payment_roan %></td>
+        <td><%= job.car_roan %></td>
+        <td><%= job.creditcard_roan %></td>
+        <td><%= job.retail_roan %></td>
+        <td><%= link_to 'Show', job %></td>
+        <td><%= link_to 'Edit', edit_job_path(job) %></td>
+        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Job', new_job_path %>

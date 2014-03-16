@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  jobname: MyString
+  salary: 1
+  dividend_income: 1
+  business_income: 1
+  tax: 1
+  home_payment: 1
+  education_payment: 1
+  car_payment: 1
+  creditcard_payement: 1
+  retail_payment: 1
+  education_expense_per_child: 1
+  saving: 1
+  home_roan: 1
+  payment_roan: 1
+  car_roan: 1
+  creditcard_roan: 1
+  retail_roan: 1
+
+two:
+  jobname: MyString
+  salary: 1
+  dividend_income: 1
+  business_income: 1
+  tax: 1
+  home_payment: 1
+  education_payment: 1
+  car_payment: 1
+  creditcard_payement: 1
+  retail_payment: 1
+  education_expense_per_child: 1
+  saving: 1
+  home_roan: 1
+  payment_roan: 1
+  car_roan: 1
+  creditcard_roan: 1
+  retail_roan: 1
