@@ -69,6 +69,6 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:jobname, :salary, :interest_income, :dividend_income, :business_income, :tax, :home_payment, :education_payment, :car_payment, :creditcard_payement, :retail_payment, :etc_payment, :education_expense_per_child, :saving, :home_roan, :payment_roan, :car_roan, :creditcard_roan, :retail_roan)
+      params.require(:job).permit(:jobname, :salary, :interest_income, :dividend_income, :business_income, :tax, :home_payment, :education_payment, :car_payment, :creditcard_payment, :retail_payment, :etc_payment, :education_expense_per_child, :saving, :home_roan, :education_roan, :car_roan, :creditcard_roan, :retail_roan)
     end
 end

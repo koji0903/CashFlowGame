@@ -18,7 +18,7 @@ class JobsControllerTest < ActionController::TestCase
 
   test "should create job" do
     assert_difference('Job.count') do
-      post :create, job: { business_income: @job.business_income, car_payment: @job.car_payment, car_roan: @job.car_roan, creditcard_payement: @job.creditcard_payement, creditcard_roan: @job.creditcard_roan, dividend_income: @job.dividend_income, education_expense_per_child: @job.education_expense_per_child, education_payment: @job.education_payment, home_payment: @job.home_payment, home_roan: @job.home_roan, jobname: @job.jobname, payment_roan: @job.payment_roan, retail_payment: @job.retail_payment, retail_roan: @job.retail_roan, salary: @job.salary, saving: @job.saving, tax: @job.tax }
+      post :create, job: { business_income: @job.business_income, car_payment: @job.car_payment, car_roan: @job.car_roan, creditcard_payment: @job.creditcard_payment, creditcard_roan: @job.creditcard_roan, dividend_income: @job.dividend_income, education_expense_per_child: @job.education_expense_per_child, education_payment: @job.education_payment, education_roan: @job.education_roan, etc_payment: @job.etc_payment, home_payment: @job.home_payment, home_roan: @job.home_roan, interest_income: @job.interest_income, jobname: @job.jobname, retail_payment: @job.retail_payment, retail_roan: @job.retail_roan, salary: @job.salary, saving: @job.saving, tax: @job.tax }
     end
 
     assert_redirected_to job_path(assigns(:job))
@@ -35,7 +35,7 @@ class JobsControllerTest < ActionController::TestCase
   end
 
   test "should update job" do
-    patch :update, id: @job, job: { business_income: @job.business_income, car_payment: @job.car_payment, car_roan: @job.car_roan, creditcard_payement: @job.creditcard_payement, creditcard_roan: @job.creditcard_roan, dividend_income: @job.dividend_income, education_expense_per_child: @job.education_expense_per_child, education_payment: @job.education_payment, home_payment: @job.home_payment, home_roan: @job.home_roan, jobname: @job.jobname, payment_roan: @job.payment_roan, retail_payment: @job.retail_payment, retail_roan: @job.retail_roan, salary: @job.salary, saving: @job.saving, tax: @job.tax }
+    patch :update, id: @job, job: { business_income: @job.business_income, car_payment: @job.car_payment, car_roan: @job.car_roan, creditcard_payment: @job.creditcard_payment, creditcard_roan: @job.creditcard_roan, dividend_income: @job.dividend_income, education_expense_per_child: @job.education_expense_per_child, education_payment: @job.education_payment, education_roan: @job.education_roan, etc_payment: @job.etc_payment, home_payment: @job.home_payment, home_roan: @job.home_roan, interest_income: @job.interest_income, jobname: @job.jobname, retail_payment: @job.retail_payment, retail_roan: @job.retail_roan, salary: @job.salary, saving: @job.saving, tax: @job.tax }
     assert_redirected_to job_path(assigns(:job))
   end
 

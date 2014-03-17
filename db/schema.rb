@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140316085141) do
+ActiveRecord::Schema.define(version: 20140317132422) do
 
   create_table "jobs", force: true do |t|
     t.string   "jobname",                                 null: false
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20140316085141) do
     t.integer  "home_payment",                default: 0
     t.integer  "education_payment",           default: 0
     t.integer  "car_payment",                 default: 0
-    t.integer  "creditcard_payement",         default: 0
+    t.integer  "creditcard_payment",          default: 0
     t.integer  "retail_payment",              default: 0
     t.integer  "etc_payment",                 default: 0
     t.integer  "education_expense_per_child", default: 0

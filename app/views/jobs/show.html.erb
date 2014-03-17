@@ -92,7 +92,7 @@
   </tr>
   <tr>
     <td class="item highlight">クレジットカードの支払：</td>
-    <td class="money highlight"><%= number_to_currency(@job.creditcard_payement, :precision => 0) %></td>
+    <td class="money highlight"><%= number_to_currency(@job.creditcard_payment, :precision => 0) %></td>
     <td></td>
     <td></td>
     <td></td>
@@ -117,7 +117,7 @@
     <td class="money highlight"><%= number_to_currency(@education_expense, :precision => 0)  %></td>
     <td></td>
     <td class="point highlight">支出の合計：</td>
-    <% @payment = @job.tax + @job.home_payment + @job.education_payment + @job.car_payment + @job.creditcard_payement + @job.retail_payment + @job.etc_payment + @education_expense %>
+    <% @payment = @job.tax + @job.home_payment + @job.education_payment + @job.car_payment + @job.creditcard_payment + @job.retail_payment + @job.etc_payment + @education_expense %>
     <td class="money point highlight"><%= number_to_currency(@payment, :precision => 0) %></td>
   </tr>
   <tr>
